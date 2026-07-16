@@ -9,7 +9,7 @@ namespace sjtu {
 
 class exception {
    protected:
-    const std::string variant = "";
+    std::string variant = "";
     std::string detail = "";
 
    public:
@@ -23,19 +23,47 @@ class exception {
 };
 
 class index_out_of_bound : public exception {
-    /* __________________________ */
+public:
+    index_out_of_bound() : exception() {
+        variant = "index_out_of_bound";
+    }
+    index_out_of_bound(const std::string &detail) : exception() {
+        variant = "index_out_of_bound";
+        this->detail = detail;
+    }
 };
 
 class runtime_error : public exception {
-    /* __________________________ */
+public:
+    runtime_error() : exception() {
+        variant = "runtime_error";
+    }
+    runtime_error(const std::string &detail) : exception() {
+        variant = "runtime_error";
+        this->detail = detail;
+    }
 };
 
 class invalid_iterator : public exception {
-    /* __________________________ */
+public:
+    invalid_iterator() : exception() {
+        variant = "invalid_iterator";
+    }
+    invalid_iterator(const std::string &detail) : exception() {
+        variant = "invalid_iterator";
+        this->detail = detail;
+    }
 };
 
 class container_is_empty : public exception {
-    /* __________________________ */
+public:
+    container_is_empty() : exception() {
+        variant = "container_is_empty";
+    }
+    container_is_empty(const std::string &detail) : exception() {
+        variant = "container_is_empty";
+        this->detail = detail;
+    }
 };
 }  // namespace sjtu
 
